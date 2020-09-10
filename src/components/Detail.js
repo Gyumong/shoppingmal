@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+ㄴimport React,{useState} from 'react'
 import {Row,Col,Button} from 'antd';
 import {useHistory,useParams} from 'react-router-dom';
 import Details from '../Details.css';
@@ -8,10 +8,11 @@ function Detail(props) {
     const {id} = useParams();
     const history = useHistory();
 
-    const store= props.data.find((store)=>{
-        return store.id == id;
+    const store= props.data.find((a)=>{
+        return a.id == id;
     });
     
+    console.log(store)
     return (
         <Row>
             <Col md={12}> 
@@ -30,16 +31,5 @@ function Detail(props) {
     )
 }
 
-{/* <div className="row">
-<div className="col-md-6">
-  <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-</div>
-<div className="col-md-6 mt-4">
-  <h4 className="pt-5">상품명</h4>
-  <p>상품설명</p>
-  <p>120000원</p>
-  <button className="btn btn-danger">주문하기</button> 
-</div>
-</div> */}
 
 export default Detail
