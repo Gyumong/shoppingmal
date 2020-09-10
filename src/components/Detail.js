@@ -1,4 +1,4 @@
-ㄴimport React,{useState} from 'react'
+import React,{useState} from 'react'
 import {Row,Col,Button} from 'antd';
 import {useHistory,useParams} from 'react-router-dom';
 import Details from '../Details.css';

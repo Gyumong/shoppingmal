@@ -12,7 +12,7 @@ function GridCards(props) {
 
     return (
         <Col xs={24} lg={7} className="Cards">
-                <Link to={`/detail`}>
+                <Link to={`/detail/${props.data.id}`}>
                 <img src={require(`./img/img${props.data.id}.jpg`)}width="100%"/>
                 </Link>
             <h4>{props.data.title}</h4>
