@@ -1,0 +1,11 @@
+.Card{
+    display:flex;
+    justify-content: space-around;
+}
+.Cards{
+    margin:10px;
+}
+
+.Cards img{
+    border-radius: 5px;
+}

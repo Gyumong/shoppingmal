@@ -1,7 +1,35 @@
 .App {
   text-align: center;
 }
+.Menu{
+  display:flex;
+  justify-content: space-between;
+  background:black;
+  color:white;
+}
+.landing{
+  background-image: url(/background4.jpg);
+  background-position: center,center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 600px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 50px;  
+}
 
+.landing-title{
+  color:white;
+  font-size: 50px;
+  text-align: right;
+  margin-bottom: 36px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.content{
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
