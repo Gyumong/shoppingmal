@@ -10,6 +10,8 @@ import GridCards from './components/GridCards';
 import Detail from './components/Detail';
 import {Route,Link,Switch} from 'react-router-dom';
 import Data from './Data';
+import Cart from './components/Cart';
+import axios from 'axios';
 
 
 
@@ -17,12 +19,13 @@ import Data from './Data';
 function App() {
   const { SubMenu } = Menu;
   const [data,setData]= useState(Data);
+  const [stock,setStock]= useState([8,9,10]);
   return (
     <div className="App">
        <Menu  mode="horizontal" className="Menu">
         <Menu.Item >
-          <Link to="/">
-          Cielo
+          <Link className="link" to="/">
+           Cielo
           </Link>
         </Menu.Item>
         <SubMenu title="Outer">
@@ -43,18 +46,9 @@ function App() {
           </Menu.ItemGroup>
         </SubMenu>
         <Menu.Item key="alipay">
-          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
             Login
-          </a>
         </Menu.Item>
       </Menu>
-      <Button onClick={()=>{
-          const a = data.sort((a,b)=>{
-          return parseFloat(a.price)-parseFloat(b.price);
-          console.log(data);
-        });
-        setData(a);
-      }}>버튼</Button>
     <Switch>
     <Route path="/" exact>
       <div className="landing">
@@ -75,9 +69,22 @@ function App() {
         })
         }
       </Row>
+      {/* <Button type="primary" onClick={()=>{
+            axios.get('')
+            .then((result)=>{
+                const abc=data.concat(result.data)
+                setData(abc);
+            })
+            .catch(()=>{
+                console.log('실패 했습니다.')
+            })
+        }}>더보기</Button> */}
     </Route>
     <Route path="/detail/:id">
-      <Detail data={data}/>
+      <Detail data={data} stock={stock} setStock={setStock}/>
+    </Route>
+    <Route path= "/cart">
+      <Cart/>
     </Route>
     </Switch>
     </div>

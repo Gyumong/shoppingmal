@@ -7,7 +7,10 @@
   background:black;
   color:white;
 }
-
+.link{
+  color:white;
+  list-style: none;
+}
 .landing{
   background-image: url(/background4.jpg);
   background-position: center,center;
